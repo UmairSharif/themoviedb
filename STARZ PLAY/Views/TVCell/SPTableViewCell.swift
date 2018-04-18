@@ -8,8 +8,13 @@
 
 import UIKit
 
-class SPTableViewCell: UITableViewCell, SPCollectionViewManagerDelegate {
+protocol SPTableViewCellDelegate: NSObjectProtocol {
+    func didSelectObject(_ object: SPVideo, atIndexPath: IndexPath)
+}
 
+class SPTableViewCell: UITableViewCell, SPCollectionViewManagerDelegate {
+    
+    weak var delegate : SPTableViewCellDelegate?
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var lblTitle: UILabel!
     var collectionManager: SPVideoCVManager?
@@ -33,8 +38,14 @@ class SPTableViewCell: UITableViewCell, SPCollectionViewManagerDelegate {
         return CGSize(width: 100, height: 100)
     }
     func didSelectRow(at indexPath: IndexPath) {
-        
+        //let video = contents[indexPath.row] as? SPVideo
+        print("tbl cell delegate \(indexPath.row)")
     }
+    
+    func didSelectObject(_ object: SPVideo, atIndexPath: IndexPath) {
+        self.delegate?.didSelectObject(object, atIndexPath: atIndexPath)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

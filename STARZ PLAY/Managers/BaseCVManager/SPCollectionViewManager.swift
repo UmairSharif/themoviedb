@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SPCollectionViewManagerDelegate: NSObjectProtocol {
-    func didSelectRow(at indexPath: IndexPath)
+    func didSelectObject(_ object: SPVideo, atIndexPath: IndexPath)
     func sizeForCell(at indexPath: IndexPath) -> CGSize
 }
 
@@ -51,7 +51,8 @@ class SPCollectionViewManager: NSObject, UICollectionViewDelegate, UICollectionV
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let del = delegate {
-            del.didSelectRow(at: indexPath)
+            let video = contents[indexPath.row] as? SPVideo
+            del.didSelectObject(video!, atIndexPath: indexPath)
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -23,7 +23,8 @@ class SPVideoCVManager: SPCollectionViewManager {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
+        let video = contents[indexPath.row] as? SPVideo
+        self.delegate?.didSelectObject(video!, atIndexPath: indexPath)
     }
     
 }

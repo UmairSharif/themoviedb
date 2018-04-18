@@ -33,12 +33,20 @@ class ViewController: UIViewController, SPTableViewManagerDelegate {
             
         }
     }
-    func didSelectRow(at indexPath: IndexPath) {
-        
+    func didSelectObject(_ object: SPVideo, atIndexPath: IndexPath) {
+        self.performSegue(withIdentifier: "detailSegue", sender: object)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            let vc = segue.destination as! DetailViewController
+            vc.SPVideoObject = sender as? SPVideo
+        }
     }
 
 

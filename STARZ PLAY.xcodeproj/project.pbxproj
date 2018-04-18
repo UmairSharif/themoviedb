@@ -26,6 +26,7 @@
 		5208B1E620867B8C00626BB2 /* SPVideoTVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208B1E520867B8C00626BB2 /* SPVideoTVManager.swift */; };
 		5208B1E8208680D300626BB2 /* SPVideoCVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208B1E7208680D300626BB2 /* SPVideoCVManager.swift */; };
 		D19E2A2FF311180C6B6A61BE /* Pods_STARZ_PLAY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A882DF914681134A8E1261B3 /* Pods_STARZ_PLAY.framework */; };
+		D2418E732087E0F500C5F1F9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2418E722087E0F500C5F1F9 /* DetailViewController.swift */; };
 		EF02016C727D63B778425BE0 /* Pods_STARZ_PLAYTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8539876094BE6A287C9022 /* Pods_STARZ_PLAYTests.framework */; };
 		FE3E8986EEA6CF655FBF6F18 /* Pods_STARZ_PLAYUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53925D3BC7B96D7CDE298B6 /* Pods_STARZ_PLAYUITests.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		7A031057745D2E3FEA922B8D /* Pods-STARZ PLAY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STARZ PLAY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STARZ PLAY/Pods-STARZ PLAY.debug.xcconfig"; sourceTree = "<group>"; };
 		A882DF914681134A8E1261B3 /* Pods_STARZ_PLAY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STARZ_PLAY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0355832530918DBE9735308 /* Pods-STARZ PLAYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STARZ PLAYTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STARZ PLAYTests/Pods-STARZ PLAYTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2418E722087E0F500C5F1F9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E53925D3BC7B96D7CDE298B6 /* Pods_STARZ_PLAYUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STARZ_PLAYUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64161510FDA19770B955701 /* Pods-STARZ PLAY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STARZ PLAY.release.xcconfig"; path = "Pods/Target Support Files/Pods-STARZ PLAY/Pods-STARZ PLAY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				5208B19B2086686200626BB2 /* ViewController.swift */,
+				D2418E722087E0F500C5F1F9 /* DetailViewController.swift */,
 				5208B1E520867B8C00626BB2 /* SPVideoTVManager.swift */,
 				5208B1E7208680D300626BB2 /* SPVideoCVManager.swift */,
 			);
@@ -577,6 +580,7 @@
 				5208B1E02086761E00626BB2 /* SPConstant.swift in Sources */,
 				5208B19C2086686200626BB2 /* ViewController.swift in Sources */,
 				5208B1E22086770100626BB2 /* SPVideo.swift in Sources */,
+				D2418E732087E0F500C5F1F9 /* DetailViewController.swift in Sources */,
 				5208B1CD208668A500626BB2 /* SPTableViewCell.swift in Sources */,
 				5208B1E620867B8C00626BB2 /* SPVideoTVManager.swift in Sources */,
 				5208B19A2086686200626BB2 /* AppDelegate.swift in Sources */,

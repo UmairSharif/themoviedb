@@ -9,14 +9,14 @@
 import UIKit
 
 protocol SPTableViewManagerDelegate: NSObjectProtocol {
-    func didSelectRow(at indexPath: IndexPath)
+    func didSelectObject(_ object: SPVideo, atIndexPath: IndexPath)
 }
 
 class SPTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     var tableView: UITableView?
     var contents = [Any]()
     var sectionCount = 1
-    var delegate: SPTableViewManagerDelegate?
+    weak var delegate: SPTableViewManagerDelegate?
     var reload: Void {
         DispatchQueue.main.async {
             self.tableView?.reloadData()
@@ -47,8 +47,8 @@ class SPTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell(style: .default, reuseIdentifier: "")
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let del = delegate {
-            del.didSelectRow(at: indexPath)
+        if let delegate = delegate {
+            //
         }
     }
 }
