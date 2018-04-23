@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AVKit
+import AVFoundation
 
 class DetailViewController: UIViewController {
     
@@ -37,11 +39,20 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func playVideoAction(_ sender: Any) {
-        let alert = UIAlertController.init(title: "Error!", message: "No video available for the selected type", preferredStyle: .alert)
-        
-        let okBtn = UIAlertAction.init(title: "OK", style: .default, handler: nil)
-        alert.addAction(okBtn)
-        
-        self.present(alert, animated: true, completion: nil)
+        playVideoFromURL(urlString: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")
+    }
+    
+    func playVideoFromURL( urlString: String ) {
+        if let url:URL = URL.init(string: urlString) {
+            let player = AVPlayer(url: url)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            playerViewController.entersFullScreenWhenPlaybackBegins = true
+            playerViewController.showsPlaybackControls = true
+
+            self.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+        }
     }
 }

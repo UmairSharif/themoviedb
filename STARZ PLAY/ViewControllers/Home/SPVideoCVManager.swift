@@ -17,7 +17,11 @@ class SPVideoCVManager: SPCollectionViewManager {
         if let imageUrl = video?.poster_path {
             url = URL(string: kImageBaseUrl+(imageUrl))
         }
-        cell?.imgPoster.sd_setImage(with: url, placeholderImage: UIImage.init(named: "placeholder-img"))
+        cell?.imgPoster.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder-img"), options: .refreshCached, completed: { (image, error, cacheType, url) in
+            if (image) != nil {
+                cell?.imgPoster.image = image
+            }
+        })
         
         return cell!
     }
